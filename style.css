@@ -1,0 +1,113 @@
+*{
+ box-sizing: border-box;
+
+}
+body {
+  background-color: black;
+  margin: 0;
+}
+div {
+ position: absolute;
+ left: 50%;
+ top: 50%;
+  transform: translate(-50% , -50%);
+  -webkit-transform: translate(-50% , -50%);
+  -moz-transform: translate(-50% , -50%);
+  -ms-transform: translate(-50% , -50%);
+  -o-transform: translate(-50% , -50%);
+ color: white ;
+}
+
+div span {
+ text-transform: uppercase; 
+ letter-spacing: 5px;
+ font-size: 80px;
+ line-height: 1 ;
+}
+
+.two span , .three span {
+ position: relative;
+ 
+ z-index: 1;
+}
+
+.three span{
+  mix-blend-mode: difference; 
+}
+
+div::before{
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ background-color: white;
+ width: 100px;
+ height: 100%;
+ animation: move 4s linear infinite;
+ -webkit-animation: move 4s li;
+}
+
+.two::before{
+ z-index: -1;  
+
+ background-color: #673838;
+} 
+
+.three::before{
+ z-index: -1; 
+
+  background-color: white ;
+}
+
+@keyframes move {
+  0% , 100%{ 
+   left: 0;
+  }
+
+  50%{
+   left: 100%;
+  }
+
+}
+
+.two {
+ left: 50%;
+ top: 81%;
+}
+
+.three {
+  top: 191px;
+}
+
+
+@media (min-width: 150px){
+div span {
+        font-size: 20px;
+  }
+
+ }
+
+@media (min-width: 300px){
+div span {
+        font-size: 34px;
+  }
+
+ }
+
+ @media (min-width: 400px){
+
+  
+div span {
+        font-size: 58px;
+  }
+
+ }
+
+ @media (min-width: 420px){
+
+  
+div span {
+        font-size: 80px;
+  }
+
+ }
